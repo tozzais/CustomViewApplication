@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -14,6 +15,8 @@ import android.view.View;
  */
 
 public class MyView extends View {
+
+    private String TAG = "MyView";
 
     Paint mPaint;
     Rect mRect;
@@ -89,7 +92,7 @@ public class MyView extends View {
          *  3.getWidth得到正确数值需要调用过onLayout之后。
          *
          */
-        Log.e("-------",getX()+":"+getY()+":"+getWidth()+":"+getHeight()+":"+getMeasuredWidth());
+        Log.e(TAG,getX()+":"+getY()+":"+getWidth()+":"+getHeight()+":"+getMeasuredWidth());
         //绘制直线  一块画布的对角线
 //        canvas.drawLine(0,0,getWidth(),getHeight(),mPaint);
         //绘制 一条水平的直线 距离组件的顶部 10个像素
@@ -115,12 +118,19 @@ public class MyView extends View {
 //        canvas.drawText(c,1,3,20,100,mPaint);
 
         /**
-         *
+         *绘制一个路径  moveTo 相当于起点
          */
+        Path path = new Path();
+        path.moveTo(0, 120);// 此点为多边形的起点
+        path.lineTo(0, 200);
+        path.lineTo(80, 200);
+        path.lineTo(80, 160);
+        path.close(); // 使这些点构成封闭的多边形
+        canvas.drawPath(path, mPaint);
 
 
 
     }
-
     private char[] c = {'a','b','c','d'};
+
 }

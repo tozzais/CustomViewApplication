@@ -1,11 +1,14 @@
 package com.xmm.customviewapplication;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -127,6 +130,48 @@ public class MyView extends View {
         path.lineTo(80, 160);
         path.close(); // 使这些点构成封闭的多边形
         canvas.drawPath(path, mPaint);
+        /**
+         * 绘制Bitmap
+         */
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+        canvas.drawBitmap(bitmap,200,50,mPaint);
+
+        /**
+         * 绘制点
+         */
+        mPaint.setStrokeWidth(3);
+        canvas.drawPoint(200,200,mPaint);
+        canvas.drawPoint(205,205,mPaint);
+        canvas.drawPoint(210,210,mPaint);
+        canvas.drawPoint(215,215,mPaint);
+
+        /**
+         *  画椭圆
+         */
+        RectF m = new RectF(320,20,520,120);
+        canvas.drawOval(m,mPaint);
+
+        /**
+         *  画圆
+         */
+        RectF m1= new RectF(320,20,520,120);
+        canvas.drawCircle(300,150,10,mPaint);
+
+
+        /**
+         *  画弧
+         *  startAngle 开始的角度
+         *  sweepAngle 一共要绘制的角度
+         *
+         *  useCenter 表示是否 使用圆心
+         */
+        RectF m2= new RectF(100f,400f,400f,700f);
+        mPaint.setAntiAlias(true);
+        mPaint.setStyle(Paint.Style.FILL);
+        canvas.drawArc(m2,210,120,true,mPaint);
+
+
+
 
 
 

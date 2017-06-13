@@ -100,9 +100,27 @@ public class MyView extends View {
          * Rect的参数是int， RectF的参数是 Float(更加的准确一点)
          */
         //绘制矩形
-        mRect = new Rect();
+        mRect = new Rect(20,20,100,60);
         canvas.drawRect(mRect,mPaint);
+
+        /**
+         *  绘制文字
+         *  drawText(String text, float x, float y, Paint paint)
+         *  x,y 表示绘制的文字所在区域的左下角的坐标
+         *  drawText(char[] text, int index, int count, float x, float y, Paint paint)
+         *   和上面的类似，字符数组从 index开始绘制 count和字符，会发生越界异常
+         */
+        mPaint.setTextSize(40);
+        canvas.drawText("测试文字",20,100,mPaint);
+//        canvas.drawText(c,1,3,20,100,mPaint);
+
+        /**
+         *
+         */
+
 
 
     }
+
+    private char[] c = {'a','b','c','d'};
 }

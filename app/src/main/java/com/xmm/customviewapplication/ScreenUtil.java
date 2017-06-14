@@ -24,7 +24,7 @@ public class ScreenUtil {
         float xdpi = dm.xdpi;
         float ydpi = dm.ydpi;
         int screenWidth = dm.widthPixels; // 屏幕宽（像素，如：480px）
-        Log.e("------",screenWidth+"");
+
         return screenWidth;
     }
     public  static int getScreenHeight(Activity activity){

@@ -2,6 +2,7 @@ package com.xmm.customviewapplication;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,7 @@ public class MyViewGroup extends ViewGroup {
     private int mScreenHeight;
     private void init() {
 
-        mScreenHeight =  ScreenUtil.getScreenHeight(getContext());
+        mScreenHeight =  ScreenUtil.getScreenHeight(getContext())-500;
         mScroller = new Scroller(getContext());
 
     }
@@ -76,8 +77,10 @@ public class MyViewGroup extends ViewGroup {
             case MotionEvent.ACTION_DOWN:
                 mLastY = y;
                 mStart = getScrollY();
+                Log.e("------","按下了");
                 break;
             case MotionEvent.ACTION_MOVE:
+                Log.e("------","滑动了");
                 if(!mScroller.isFinished()){
                     mScroller.abortAnimation();
                 }

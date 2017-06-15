@@ -111,6 +111,9 @@ public class MyViewGroup2 extends ViewGroup {
                 : width, (heightMode == MeasureSpec.EXACTLY) ? sizeHeight
                 : height);
 
+        //如果是
+//        setMeasuredDimension(sizeWidth,sizeHeight);
+
     }
 
     @Override

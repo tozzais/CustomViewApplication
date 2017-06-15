@@ -7,6 +7,7 @@
     android:layout_margin="10dp"
     tools:context="com.xmm.customviewapplication.MainActivity">
 
+
     <com.xmm.customviewapplication.MyViewGroup2
         android:layout_width="200dp"
         android:layout_height="200dp"

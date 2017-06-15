@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CustomViewApplication</string>
+
+
+    <!--测试回滚-->
+
+    <string name="appe">CustomViewApplication</string>
 </resources>

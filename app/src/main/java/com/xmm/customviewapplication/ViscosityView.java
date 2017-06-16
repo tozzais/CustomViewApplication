@@ -6,16 +6,22 @@ import android.graphics.Paint;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
  * Created by Administrator on 2017/6/16.
  *
  * 粘性空间 实现下拉刷新
- *
- * 自定义组件中绘制
- * 自定义空间相应，控件高度相应变化
- * 利用贝塞尔曲线实现粘性效果
+ * 1:
+ *  自定义组件中绘制
+ *  自定义空间相应，控件高度相应变化
+ *  利用贝塞尔曲线实现粘性效果
+ * 2:
+ *  了解事件传递
+ *  获取拉动手势  计算拉动速度
+ *  View相应拉动并更改速度
+ * 3：
  *
  */
 
@@ -64,5 +70,10 @@ public class ViscosityView extends View{
         int width = getWidth()>>1;
         int geight = getHeight()>>1;
         canvas.drawCircle(width,geight,mCircleWidth,mCirclePaint);
+    }
+
+
+    public  void setProgress(float progress){
+        Log.e("TAG","progress = "+progress);
     }
 }

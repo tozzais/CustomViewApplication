@@ -9,6 +9,7 @@
 
 
     <com.xmm.customviewapplication.ViscosityView
+        android:id="@+id/viscosityView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
          >

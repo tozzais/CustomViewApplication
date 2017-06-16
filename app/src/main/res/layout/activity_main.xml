@@ -4,7 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:padding="20dp"
     tools:context="com.xmm.customviewapplication.MainActivity">
 
 
@@ -12,8 +12,17 @@
         android:id="@+id/viscosityView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
+        android:visibility="gone"
          >
 
 
     </com.xmm.customviewapplication.ViscosityView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layerType="software"
+        android:background="@drawable/shape"
+        />
 </RelativeLayout>

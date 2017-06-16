@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
+//       setSpanSizeLookUp  设置 GridView 和Listview的混排
     }
 }
